@@ -15,6 +15,20 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  
+  <h2>Room Categories</h2>
+  
+  <%= f.fields_for :room_categories do |room_category| %>
+    <div class="room_category_fields">
+      <div class="field">
+        <%= room_category.label :name %><br>
+        <%= room_category.text_field :name %>
+        <%= room_category.check_box :_destroy %>
+        <%= room_category.label :_destroy, 'Remove' %>
+      </div>
+    </div>
+  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
